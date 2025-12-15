@@ -11,9 +11,9 @@ public class AddressBookMain {
             System.out.println("Address Book Menu:");
             System.out.println("1. Add Contact");
             System.out.println("2. Display Contacts");
-            System.out.println("3. Exit");
+            System.out.println("3. Edit Contact");
+            System.out.println("4. Exit");
             System.out.print("Choose an option: ");
-
             int choice = sc.nextInt();
             sc.nextLine();
 
@@ -27,13 +27,13 @@ public class AddressBookMain {
                     String phoneNumber = sc.nextLine();
                     System.out.print("Enter Email: ");
                     String email = sc.nextLine();
-                    System.out.println("Enter Address: ");
+                    System.out.print("Enter Address: ");
                     String address = sc.nextLine();
-                    System.out.println("Enter City: ");
+                    System.out.print("Enter City: ");
                     String city = sc.nextLine();
-                    System.out.println("Enter State: ");
+                    System.out.print("Enter State: ");
                     String state = sc.nextLine();
-                    System.out.println("Enter Zip Code: ");
+                    System.out.print("Enter Zip Code: ");
                     String zipCode = sc.nextLine();
 
                     Contact contact = new Contact(firstName,lastName, phoneNumber, email, address, city, state, zipCode);
@@ -43,6 +43,9 @@ public class AddressBookMain {
                     addressBook.displayContacts();
                     break;
                 case 3:
+                    addressBook.editContact();
+                    break;
+                case 4:
                     running = false;
                     System.out.println("Exiting Address Book.");
                     break;
